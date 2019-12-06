@@ -174,23 +174,23 @@ def main():
         city, month, day = get_filters()
         #load_data = getting the data from user ------------------- code in line 36
         df = load_data(city, month, day) 
-        continu = input('\nWould you like to continue to Display (Most Frequent Times of Travel)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nWould you like to continue to Display (Most Frequent Times of Travel)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         time_stats(df, month, day) #code in line 55
-        continu = input('\nWanna Display (most popular stations and trip)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nWanna Display (most popular stations and trip)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         station_stats(df)          #code in line 79
-        continu = input('\nhow about Display (total and average trip duration)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nhow about Display (total and average trip duration)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         trip_duration_stats(df)    #code in line 100
-        continu = input('\nat last lets Display (statistics on bikeshare users)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nat last lets Display (statistics on bikeshare users)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
         user_stats(df)             #code in line 135
 
