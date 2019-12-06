@@ -14,21 +14,21 @@ def get_filters():
         if(city == 'chicago' or city == 'new york' or city == 'washington' or city == 'all'):
             break
         else:
-            city = input('Enter Correct city: ').lower()
+            city = input('Enter Correct city (you can print all): ').lower()
     #SELECT MONTH
     month = input('\n which month? (January), (February), (March), (April), (May), or (June) ?\n').lower()
     while(True):
         if(month == 'january' or month == 'february' or month == 'march' or month == 'april' or month == 'may' or month == 'june' or month == 'all'):
             break
         else:
-            month = input('Enter valid month\n').lower()
+            month = input('Enter valid month:  (you can print all) \n').lower()
     #SELECT DAY
-    day =  input('\nand which day ? *write a day or all to display data of all days?\n').lower()    
+    day =  input('\nand which day ?\n').lower()    
     while(True):
         if(day == 'monday' or day == 'tuesday' or day == 'wednesday' or day == 'thursday' or day == 'friday' or day == 'saturday' or day == 'sunday' or day == 'all'):
             break
         else:
-            day = input('Enter Correct day: ').lower()
+            day = input('Enter Correct day:  (you can print all)').lower()
     print('-'*40)
     return city, month, day
 
