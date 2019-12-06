@@ -198,6 +198,6 @@ def main():
         if restart.lower() != 'yes':
             break
 
-print('Hello! Let\'s explore some US bikeshare data!')
+print('Hello! welcome to my program \n Let\'s explore some US bikeshare data!')
 if __name__ == "__main__":
 	main()
