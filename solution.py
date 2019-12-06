@@ -153,15 +153,15 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     if('Birth Year' in df):
-        earliest_year = df['Birth Year'].min()
+        earli_year = df['Birth Year'].min()
         recent_year = df['Birth Year'].max()
         mc_birth_year = df['Birth Year'].mode()
         #most_common_birth_year = st.mode(df['Birth Year'])
         try:
-            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), int(mc_birth_year)))
+            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earli_year), int(recent_year), int(mc_birth_year)))
         except TypeError:
     
-            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), mc_birth_year))
+            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earli_year), int(recent_year), mc_birth_year))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
