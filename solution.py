@@ -14,21 +14,21 @@ def get_filters():
         if(city == 'chicago' or city == 'new york' or city == 'washington' or city == 'all'):
             break
         else:
-            city = input('Enter Correct city: ').lower()
+            city = input('Enter Correct city (you can print all): ').lower()
     #SELECT MONTH
     month = input('\n which month? (January), (February), (March), (April), (May), or (June) ?\n').lower()
     while(True):
         if(month == 'january' or month == 'february' or month == 'march' or month == 'april' or month == 'may' or month == 'june' or month == 'all'):
             break
         else:
-            month = input('Enter valid month\n').lower()
+            month = input('Enter valid month:  (you can print all) \n').lower()
     #SELECT DAY
-    day =  input('\nand which day ? *write a day or all to display data of all days?\n').lower()    
+    day =  input('\nand which day ?\n').lower()    
     while(True):
         if(day == 'monday' or day == 'tuesday' or day == 'wednesday' or day == 'thursday' or day == 'friday' or day == 'saturday' or day == 'sunday' or day == 'all'):
             break
         else:
-            day = input('Enter Correct day: ').lower()
+            day = input('Enter Correct day:  (you can print all)').lower()
     print('-'*40)
     return city, month, day
 
@@ -153,15 +153,15 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     if('Birth Year' in df):
-        earliest_year = df['Birth Year'].min()
+        earli_year = df['Birth Year'].min()
         recent_year = df['Birth Year'].max()
         mc_birth_year = df['Birth Year'].mode()
         #most_common_birth_year = st.mode(df['Birth Year'])
         try:
-            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), int(mc_birth_year)))
+            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earli_year), int(recent_year), int(mc_birth_year)))
         except TypeError:
     
-            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), mc_birth_year))
+            print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earli_year), int(recent_year), mc_birth_year))
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -174,23 +174,23 @@ def main():
         city, month, day = get_filters()
         #load_data = getting the data from user ------------------- code in line 36
         df = load_data(city, month, day) 
-        continu = input('\nWould you like to continue to Display (Most Frequent Times of Travel)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nWould you like to continue to Display (Most Frequent Times of Travel)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         time_stats(df, month, day) #code in line 55
-        continu = input('\nWanna Display (most popular stations and trip)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nWanna Display (most popular stations and trip)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         station_stats(df)          #code in line 79
-        continu = input('\nhow about Display (total and average trip duration)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nhow about Display (total and average trip duration)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
 
         trip_duration_stats(df)    #code in line 100
-        continu = input('\nat last lets Display (statistics on bikeshare users)? Enter yes or no.\n')
-        if continu.lower() != 'yes':
+        cont = input('\nat last lets Display (statistics on bikeshare users)? Enter yes or no.\n')
+        if cont.lower() != 'yes':
             break
         user_stats(df)             #code in line 135
 
